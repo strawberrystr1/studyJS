@@ -4,7 +4,31 @@ let isNumber = function (n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
-let money;
+let money,
+startButton = document.getElementById('start'),
+incomeAddButton = document.getElementsByTagName('button')[0],
+expensesAddButton = document.getElementsByTagName('button')[1],
+depositCheck = document.querySelector('#deposit-check'),
+addIncomeItem = document.querySelectorAll('.additional_income-item'),
+budgetMonthValue = document.querySelector('.budget_month-value'),
+budgetDayValue = document.querySelector('.budget_day-value'),
+expensesMonthValue = document.querySelector('.expenses_month-value'),
+addIncomeValue = document.querySelector('.additional_income-value'),
+addExpensesValue = document.querySelector('.additional_expenses-value'),
+incomePeriodValue = document.querySelector('.income_period-value'),
+targetMonthValue = document.querySelector('.target_month-value'),
+salaryAmount = document.querySelector('.salary-amount'),
+incomeTitle = document.querySelector('.income-title'),
+incomeAmount = document.querySelector('.income-amount'),
+expTitle = document.querySelector('.expenses-amount'),
+expAmount = document.querySelector('.expenses-amount'),
+addExpensesItem = document.querySelector('.additional_expenses-item'), 
+targetAmount = document.querySelector('.target-amount'),
+periodSelect = document.querySelector('.period-select');
+
+
+
+
 
 let start = function () {
 
@@ -126,25 +150,20 @@ let appData = {
 
 
 
-appData.asking();
-console.log('appData.asking();: ', appData.addExpenses);
-appData.getExpensesMonth();
-appData.getBudget();
-appData.getTargetMonth();
-appData.getStatusIncome();
+    appData.asking();
+    console.log('appData.asking();: ', appData.addExpenses);
+    appData.getExpensesMonth();
+    appData.getBudget();
+    appData.getTargetMonth();
+    appData.getStatusIncome();
 
-for (let key in appData) {
-    console.log('Наша программа включает в себя данные: ' + key + ' которые равны ' + appData[key]);
-}
+    for (let key in appData) {
+        console.log('Наша программа включает в себя данные: ' + key + ' которые равны ' + appData[key]);
+    }
 
-appData.getInfoDeposit();
+    appData.getInfoDeposit();
 
 let addExpArr = [];
-// appData.addExpenses.forEach((item) => {
-//     let addExp = item[0].toUpperCase() + item.slice(1);
-//     addExpArr.push(addExp);
-//     return addExpArr;
-//     });
 
     
     for (let item of appData.addExpenses) {
